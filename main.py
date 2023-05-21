@@ -250,11 +250,9 @@ class Trainer:
 
         # confusion matrix
         confusion = confusion_matrix(gt_all, pred_all)
-        show = ConfusionMatrixDisplay(confusion)
+        show = ConfusionMatrixDisplay(confusion, display_labels=classes)
 
         fig, ax = plt.subplots(figsize=(15, 15))
-        ax.xaxis.set_ticklabels(classes)
-        ax.yaxis.set_ticklabels(classes)
         fig.suptitle('Confusion matrix')
         show.plot(ax=ax)
 
